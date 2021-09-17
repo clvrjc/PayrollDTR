@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DTR & Payroll System</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'dist/img/favico.png') }}" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='face_js/body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'plugins/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'plugins/loading/loading.css') }}">
+</head>
+<body>
+    <video id="video" width="720px" height="560px" autoplay muted></video>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'face_js/face-api.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'face_js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='face_js/alerts.js') }}"></script>
+</body>
+</html>
