@@ -1,5 +1,12 @@
 const video = document.getElementById('video');
 
+var socket = io.connect('https://normi-dtr-payroll.herokuapp.com');
+socket.on( 'connect', function() {
+  console.log("SOCKET CONNECTED")
+})
+
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
 Promise.all([
   faceapi.loadFaceLandmarkModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
   faceapi.loadFaceRecognitionModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
@@ -23,7 +30,6 @@ function startVideo() {
 }
 
 video.addEventListener('play', () => {
-  // console.log('thiru');
 
   const canvas = faceapi.createCanvasFromMedia(video);
   document.body.append(canvas);
@@ -36,6 +42,9 @@ video.addEventListener('play', () => {
       .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
       .withFaceLandmarks()
       .withFaceExpressions();
+    socket.emit( 'my event', {
+      data: detections
+    })
 
     const resizedDetections = faceapi.resizeResults(detections, displaySize);
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);

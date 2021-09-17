@@ -1,6 +1,8 @@
 from flask import Flask, render_template
+from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -11,6 +13,14 @@ def index():
     dtr = "active",
     face = "active"
     ),200
+
+@socketio.on('connect')
+def test_connect():
+    print("SOCKET CONNECTED")
+
+@socketio.on('my event')
+def handle_my_custom_event(json, methods=['GET', 'POST']):
+    print('received my event: '+ str(json))
 
 #DTR Views
 @app.route('/DTR/Facial-Recognition')
@@ -30,4 +40,5 @@ def dtr_qr():
 
 if __name__ == "__main__":
 	#app.run(debug=True, port=5000)
-    app.run()#for deployment
+    #app.run()#for deployment
+    socketio.run(app)
