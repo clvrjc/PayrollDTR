@@ -7,7 +7,7 @@ const Toast = Swal.mixin({
 
 function sweetAlert(){
     Swal.fire({
-        imageUrl: 'http://127.0.0.1:5000/static/dist/img/avatar5.png',
+        imageUrl: 'https://normi-dtr-payroll.herokuapp.com/static/dist/img/avatar5.png',
         imageHeight: 200,
         imageAlt: "Profile Photo",
 

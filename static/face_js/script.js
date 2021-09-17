@@ -1,13 +1,13 @@
 const video = document.getElementById('video');
 
 Promise.all([
-  faceapi.loadFaceLandmarkModel("http://127.0.0.1:5000/static/face_js/models/"),
-  faceapi.loadFaceRecognitionModel("http://127.0.0.1:5000/static/face_js/models/"),
-  faceapi.loadTinyFaceDetectorModel("http://127.0.0.1:5000/static/face_js/models/"),
-  faceapi.loadFaceLandmarkModel("http://127.0.0.1:5000/static/face_js/models/"),
-  faceapi.loadFaceLandmarkTinyModel("http://127.0.0.1:5000/static/face_js/models/"),
-  faceapi.loadFaceRecognitionModel("http://127.0.0.1:5000/static/face_js/models/"),
-  faceapi.loadFaceExpressionModel("http://127.0.0.1:5000/static/face_js/models/"),
+  faceapi.loadFaceLandmarkModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
+  faceapi.loadFaceRecognitionModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
+  faceapi.loadTinyFaceDetectorModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
+  faceapi.loadFaceLandmarkModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
+  faceapi.loadFaceLandmarkTinyModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
+  faceapi.loadFaceRecognitionModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
+  faceapi.loadFaceExpressionModel("https://normi-dtr-payroll.herokuapp.com/static/face_js/models/"),
 ])
   .then(startVideo)
   .catch(err => console.error(err));
