@@ -7,12 +7,7 @@ socketio = SocketIO(app)
 @app.route('/', methods=['GET'])
 def index():
     #replace with any landing page
-    return render_template('FR_landingPage.html', 
-    fullname = "Employee's Name",
-    link_name = "Facial Recognition",
-    dtr = "active",
-    face = "active"
-    ),200
+    return render_template('FR_landingPage.html'),200
 
 @socketio.on('connect')
 def test_connect():
